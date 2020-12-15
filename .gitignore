@@ -7,7 +7,7 @@ bundle/bundle.out.js
 .vscode/
 .idea/
 *.iml
-my.env
+#my.env
 my.*.env
 
 static/bower_components/
