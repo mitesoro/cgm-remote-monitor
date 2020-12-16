@@ -20,12 +20,13 @@ function config ( ) {
   /*
    * See README.md for info about all the supported ENV VARs
    */
-  env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mg/dl');
+  // env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mg/dl');
+  env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mmol/L');
 
   console.log('Units set to', env.DISPLAY_UNITS );
 
   env.PORT = readENV('PORT', 1337);
-  env.HOSTNAME = readENV('HOSTNAME', null);
+  env.HOSTNAME = readENV('HOSTNAME', '0.0.0.0');
   env.IMPORT_CONFIG = readENV('IMPORT_CONFIG', null);
   env.static_files = readENV('NIGHTSCOUT_STATIC_FILES', __dirname + '/static/');
   env.debug = {
@@ -70,6 +71,7 @@ function setSSL() {
 // A little ugly, but we don't want to read the secret into a var
 function setAPISecret() {
   var useSecret = (readENV('API_SECRET') && readENV('API_SECRET').length > 0);
+  useSecret = '1234567890abcd'
   //TODO: should we clear API_SECRET from process env?
   env.api_secret = null;
   // if a passphrase was provided, get the hex digest to mint a single token
@@ -80,7 +82,8 @@ function setAPISecret() {
       env.err = {desc: msg};
     } else {
       var shasum = crypto.createHash('sha1');
-      shasum.update(readENV('API_SECRET'));
+      shasum.update(useSecret);
+      // shasum.update(readENV('API_SECRET'));
       env.api_secret = shasum.digest('hex');
 
       if (!readENV('TREATMENTS_AUTH', true)) {

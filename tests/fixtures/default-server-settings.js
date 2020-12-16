@@ -7,8 +7,8 @@ module.exports = {
   , careportalEnabled: true
   , head: 'ae71dca'
   , settings: {
-    units: 'mg/dl'
-    , timeFormat: 12
+    units: 'mmol/L'
+    , timeFormat: 24
     , nightMode: false
     , showRawbg: 'noise'
     , customTitle: 'Test Title'
@@ -21,7 +21,7 @@ module.exports = {
     , alarmTimeagoWarnMins: 15
     , alarmTimeagoUrgent: true
     , alarmTimeagoUrgentMins: 30
-    , language: 'en'
+    , language: 'zh_cn'
     , enable: 'iob rawbg careportal delta direction upbat errorcodes'
     , showPlugins: 'iob'
     , alarmTypes: 'predict'
