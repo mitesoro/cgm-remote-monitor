@@ -43,14 +43,14 @@
     "mongoCollection": {
       "type": "string",
       "defaultValue": "entries"
-    }, 
+    },
     "displayUnits": {
       "type": "string",
       "allowedValues": [
         "mg/dl",
         "mmol"
       ],
-      "defaultValue": "mg/dl"
+      "defaultValue": "mmol"
     },
     "apiSecret": {
       "type": "string",
@@ -248,11 +248,11 @@
         "appSettings": [{
             "name": "MONGO_CONNECTION",
             "value": "[parameters('mongoConnection')]"
-          }, 
+          },
             {
             "name": "MONGO_COLLECTION",
-            "value": "[parameters('mongoCollection')]"         
-          }, {            
+            "value": "[parameters('mongoCollection')]"
+          }, {
             "name": "DISPLAY_UNITS",
             "value": "[parameters('displayUnits')]"
           }, {
