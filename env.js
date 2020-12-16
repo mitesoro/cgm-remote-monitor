@@ -21,7 +21,8 @@ function config ( ) {
    * See README.md for info about all the supported ENV VARs
    */
   // env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mg/dl');
-  env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mmol/L');
+  // env.DISPLAY_UNITS = readENV('DISPLAY_UNITS', 'mmol');
+  env.DISPLAY_UNITS = 'mmol/L';
 
   console.log('Units set to', env.DISPLAY_UNITS );
 
@@ -154,7 +155,8 @@ function readENV(varName, defaultValue) {
     if (value.toLowerCase().includes('mmol')) {
       value = 'mmol';
     } else {
-      value = 'mg/dl';
+      // value = 'mg/dl';
+      value = 'mmol';
     }
   }
 
