@@ -76,7 +76,7 @@ function setAPISecret() {
   env.api_secret = null;
   // if a passphrase was provided, get the hex digest to mint a single token
   if (useSecret) {
-    if (readENV('API_SECRET').length < consts.MIN_PASSPHRASE_LENGTH) {
+    if (useSecret.length < consts.MIN_PASSPHRASE_LENGTH) {
       var msg = ['API_SECRET should be at least', consts.MIN_PASSPHRASE_LENGTH, 'characters'].join(' ');
       console.error(msg);
       env.err = {desc: msg};
