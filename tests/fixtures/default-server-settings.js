@@ -22,7 +22,7 @@ module.exports = {
     , alarmTimeagoUrgent: true
     , alarmTimeagoUrgentMins: 30
     , language: 'zh_cn'
-    , enable: 'iob rawbg careportal delta direction upbat errorcodes'
+    , enable: 'devicestatus rawbg upbat careportal iob profile cage bage avg cob basal treatments sage boluscalc pump openaps iage speech'
     , showPlugins: 'iob'
     , alarmTypes: 'predict'
     , thresholds: {
